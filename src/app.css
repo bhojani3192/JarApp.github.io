@@ -1,0 +1,277 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper{
+    height: 850px;
+    z-index: 0 !important;
+}
+.loader{
+    background-color: #e2e0e0;
+  }
+.swiper-button-prev::after,.swiper-button-next::after{
+    font-size: 24px !important;
+    color: rgb(206, 206, 206);
+    font-weight: bold;
+}
+.swiper-button-next,.swiper-button-prev{
+    background-color: #000;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 100%;
+}
+.swiper-button-next:hover,.swiper-button-prev:hover{
+    background-color: #fff;
+}
+
+/* Pencil Animation */
+  /* begin of the keyframe animation for text object with stroke-dashoffset-attribute */
+/*   
+  .animatedfont {
+      fill:none;
+      stroke:#fff;
+      stroke-width:3;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      stroke-miterlimit:100;
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 0;
+      -webkit-animation: dash 4.9s linear forwards;
+      -o-animation: dash 4.9s linear forwards;
+      -moz-animation: dash 4.9s linear forwards;
+      animation: dash 4.9s linear forwards;
+      -webkit-animation-play-state: running;
+      } */
+  @-webkit-keyframes dash {
+      from {
+              stroke-dashoffset: 2000;
+      }
+      to {
+              stroke-dashoffset: 0;
+      }
+    }
+  /* end of the keyframe animation for text object with stroke-dashoffset-attribute */
+
+
+  /* button */
+/* .header-button ul{
+    transform: translate(0%, -30%);
+} */
+
+/* .header-button ul li a .fa{
+    font-size: 20px;
+    line-height: 80px;
+    transition: 0.5s;
+    padding-right: 14px;
+    color: white;
+    text-shadow: -3px 6px grey;
+} */
+
+.header-button ul li .header-btn-1 span{
+    letter-spacing: 4px;
+    font-size:12px;
+    font-weight: bold;
+    transition: 0.5s;    
+    color: white;
+    /* text-shadow: -3px 6px grey; */
+}
+
+.header-button ul li .header-btn-1{
+    text-decoration: none;  
+    background: #66d263;
+    text-align: left;
+    padding: 5px;
+    height: 30px;
+    transition: 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+.header-button #first{
+    z-index: 100 !important;
+}
+
+.header-button button#second {
+    z-index: 5;
+}
+ .header-button #third {
+    z-index: 2 !important;
+}
+.header-button #four {
+    z-index: 0 !important;
+}
+
+ /* .jar-slide .swiper-slide{
+    transform: translatex(30px) !important;
+}
+
+ .jar-slide .slider-2.swiper-slide{
+    transform: translatex(60px) !important;
+} 
+
+.swiper-backface-hidden .slider-3.swiper-slide{ 
+    transform: translateX(60px) !important; } */
+
+.header-button ul li .header-btn-1:before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    height: 101%;
+    width: 20px;
+    background: #bcf0bf;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+.header-button ul li .header-btn-1:after{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    height: 20px;
+    width: 100%;
+    background: #b6e06a;
+    transform: 0.5s;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+.header-button ul li .header-btn-1:hover{
+    transform: rotate(0deg) skew(0) translate(-20px, 19px);
+    background: #66d263;
+
+}
+ 
+.header-button ul li .header-btn-1:hover:after{
+    background: none;
+    top: 120px;
+    transition: All 0.4s ease;
+}
+
+.header-button ul li .header-btn-1:hover:before{
+    background: none;
+    right: 0px;    
+    position: absolute;
+    transition: All 0.4s ease;
+}
+
+.header-button ul li:hover .fa{
+    color: rgb(235, 233, 233) !important;
+}
+.header-button ul li:hover span{
+    /* color: rgb(235, 233, 233) !important; */
+}
+.button-menu{
+    top: 65px !important;
+    z-index: 9 !important;
+}
+
+/* rangeSlider */
+
+input[type="range"] {
+    outline: 0;
+    border: 0;
+    border-radius: 500px;
+    width: 400px;
+    max-width: 100%;
+    margin: 24px 0 16px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+   
+ @media screen and (-webkit-min-device-pixel-ratio:0) {
+        input[type="range"] {
+            overflow: hidden;
+            height: 40px;
+            -webkit-appearance: none;
+            background-color: #ddd;
+        } 
+        input[type="range"]::-webkit-slider-thumb {
+            width: 40px;
+            -webkit-appearance: none;
+            height: 40px;
+            cursor: ew-resize;
+            background: #fff;
+            box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 40px #1597ff;
+            border-radius: 50%;
+            transition: box-shadow 0.2s ease-in-out;
+            position: relative;
+             top: 1px;
+        }
+        input[type="range"]:active::-webkit-slider-thumb {
+            background: #fff;
+            box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 3px #1597ff;
+        }
+
+        input[type="range"]::-moz-range-progress {
+            background-color: #43e5f7; 
+        }
+        input[type="range"]::-moz-range-track {  
+            background-color: #9a905d;
+        }
+        input[type="range"]::-ms-fill-lower {
+            background-color: #43e5f7; 
+        }
+        input[type="range"]::-ms-fill-upper {  
+            background-color: #9a905d;
+        }
+    }
+
+#h4-container {
+width: 400px;
+max-width: 100%;
+padding: 0 20px;
+box-sizing: border-box;
+position: relative;
+}
+
+#h4-container #h4-subcontainer {
+    width: 100%;
+    position: relative; 
+}
+#h4-container #h4-subcontainer h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    color: #fff !important;
+    font-size: 12px;
+    transform-origin: center -10px;
+    transform: translateX(-50%);
+    transition: margin-top 0.15s ease-in-out,
+        opacity 0.15s ease-in-out;
+}
+       
+#h4-container #h4-subcontainer h4 span {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     /* background-color: #1597ff; */
+     border-radius: 0 50% 50% 50%;
+     transform: rotate(45deg);
+     z-index: -1;
+ }
+  
+input:not(:active) + #h4-container h4 {
+opacity: 0;
+margin-top: -50px;
+pointer-events: none;
+}
+
+.slider-bg{
+    margin-left: 30px;
+}
+/* .range-slider svg path{
+    fill:#1597ff ;
+} */
+
+/* @media(min-width:1200px){
+    .swiper-slide{
+        width: 1300px !important;
+    }
+} */
